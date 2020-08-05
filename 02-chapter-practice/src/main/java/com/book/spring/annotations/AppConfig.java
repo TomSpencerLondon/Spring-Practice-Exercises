@@ -25,8 +25,8 @@ public class AppConfig {
     Environment env;
 
     /* TODO 6. Create method which instantiates a valid bean of type PersonManager and names it "personManager" */
-    @Bean(nam="personRepository")
-    public Person
+    @Bean(name="personRepository")
+    public PersonManager getPersonManager(){ return new PlainPersonManagerImpl(getPersonRepository());}
 
     @Bean(name="personRepository")
     public PersonRepository getPersonRepository(){

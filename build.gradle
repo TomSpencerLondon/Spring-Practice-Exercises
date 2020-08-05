@@ -148,6 +148,6 @@ task allCompile {
     }
 }
 
-task wrapper(type: Wrapper) {
+task wrap(type: Wrapper) {
     gradleVersion = '4.2.1'
 }

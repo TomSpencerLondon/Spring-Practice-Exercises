@@ -6,6 +6,7 @@ import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
+
 /**
  * Created by iuliana.cosmina on 1/17/15.
  */
@@ -19,4 +20,9 @@ public class PrototypeBean {
     public PrototypeBean() {
         logger.info("-> Constructing instance no: " + (++instanceCounter));
     }
+
+    public static int instanceCounter(){
+        return instanceCounter;
+    }
 }
+

@@ -1,12 +1,11 @@
 package com.book.spring.components;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
-
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 
 /**
  * Created by iuliana.cosmina on 1/17/15.
@@ -27,7 +26,7 @@ public class CompleteLivingBean  implements InitializingBean, DisposableBean {
     }
 
     @PostConstruct
-    public void postConstruct(){
+    private void postConstruct(){
         logger.info("3. @PostConstruct.");
     }
 
@@ -36,22 +35,22 @@ public class CompleteLivingBean  implements InitializingBean, DisposableBean {
         logger.info("4. afterPropertiesSet.");
     }
 
-    public void initMethod(){
+    private void initMethod(){
         logger.info("5. init-method.");
     }
 
     @PreDestroy
-    public void preDestroy(){
-        logger.info("1. @PreDestroy.");
+    protected void preDestroy(){
+        logger.info("6. @PreDestroy.");
     }
 
     @Override
     public void destroy() throws Exception {
-        logger.info("2. destroy.");
+        logger.info("7. destroy.");
     }
 
-    public void destroyMethod() throws Exception {
-        logger.info("3. destroy-method.");
+    protected void destroyMethod() throws Exception {
+        logger.info("8. destroy-method.");
     }
 
 }

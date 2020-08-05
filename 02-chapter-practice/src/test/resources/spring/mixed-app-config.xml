@@ -8,6 +8,6 @@
        http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Enables bean Autowiring and Autodiscovery-->
-    <!-- TODO 7. Add spring configuration element needed to scan the com.book.components for annotated classes-->
+    <context:component-scan base-package="com.book.spring.components"/>
 
 </beans>
